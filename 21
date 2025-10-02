@@ -1,0 +1,12 @@
+def get_movies_by_category(movies, category):
+    result = []
+    for m in movies:
+        if m["category"] == category:
+            result.append(m)
+    return result
+
+
+
+#romance_movies = get_movies_by_category(movies, "Romance")
+#for film in romance_movies:
+    #print(film["name"], film["imdb"])

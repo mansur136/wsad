@@ -1,0 +1,45 @@
+class Point:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def show(self):
+        print("координаты точки:",self.x,self.y)
+    def move(self,new_x,new_y):
+        self.x=new_x
+        self.y=new_y
+    def dist(self,other_point):
+        dx=self.x-other_point.x
+        dy=self.y-other_point.y
+        distance=(dx**2+dy**2)**0.5
+        return distance
+
+print("координаты точек")
+x1=int(input("введите x: "))
+y1=int(input("введите y: "))
+p1=Point(x1, y1)
+x2=int(input("введите x: "))
+y2=int(input("введите y: "))
+p2=Point(x2, y2)
+
+print("\nначальные координаты:")
+p1.show()
+p2.show()
+
+print("расстояние между точками =", p1.dist(p2))
+
+print("\nперемещение первой точки:")
+new_x1 = int(input("введите новый x: "))
+new_y1 = int(input("введите новый y: "))
+p1.move(new_x1, new_y1)
+p1.show()
+
+print("\nПеремещение второй точки:")
+new_x2 = int(input("введите новый x: "))
+new_y2 = int(input("введите новый y: "))
+p2.move(new_x2, new_y2)
+p2.show()
+
+print("\nновые координаты:")
+p1.show()
+p2.show()
+print("новое расстояние между точками =", p1.dist(p2))

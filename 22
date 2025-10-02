@@ -1,0 +1,9 @@
+def average_imdb(movies_list):
+    total = 0
+    for m in movies_list:
+        total += m["imdb"]  
+    return total / len(movies_list)  
+
+
+
+#print("Средний рейтинг всех фильмов =", average_imdb(movies))

@@ -1,0 +1,46 @@
+class Account:
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print("Внесено:", amount, "Баланс =", self.balance)
+
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Недостаточно средств! Баланс =", self.balance)
+        else:
+            self.balance -= amount
+            print("Снято:", amount, "Баланс =", self.balance)
+
+owner = input("Введите имя владельца счёта: ")
+start_balance = int(input("Введите начальный баланс: "))
+acc = Account(owner, start_balance)
+while True:
+    print("\nВыберите действие:")
+    print("1 - Пополнить счёт")
+    print("2 - Снять деньги")
+    print("3 - Показать баланс")
+    print("4 - Выйти")
+
+    choice = input("Ваш выбор: ")
+
+    if choice == "1":
+        dep = int(input("Введите сумму для пополнения: "))
+        acc.deposit(dep)
+
+    elif choice == "2":
+        wd = int(input("Введите сумму для снятия: "))
+        acc.withdraw(wd)
+
+    elif choice == "3":
+        print("Текущий баланс", acc.balance)
+
+    elif choice == "4":
+        print("Выход", acc.owner)
+        break
+
+    else:
+        print("Ошибка")
+

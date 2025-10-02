@@ -1,0 +1,12 @@
+def get_high_score_movies(movies):
+    result = []  
+    for m in movies:
+        if m["imdb"] > 5.5:
+            result.append(m)
+    return result
+
+
+
+#good_movies = get_high_score_movies(movies)
+#for film in good_movies:
+    print(film["name"], film["imdb"])

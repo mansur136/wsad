@@ -1,0 +1,10 @@
+def unique_list(lst):
+    unique = []
+    for item in lst:
+        if item not in unique:
+            unique.append(item)
+    return unique
+
+user_input = input("Введите элементы списка через пробел: ")
+lst = [int(x) for x in user_input.split()]
+print("Уникальные значения:", unique_list(lst))
